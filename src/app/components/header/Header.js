@@ -2,12 +2,13 @@
 import React, { useState } from 'react'
 import HeaderIcon from './HeaderIcon'
 import { HiOutlineFlag,HiUserGroup    } from "react-icons/hi2";
+import Image from 'next/image';
 import { ImHome } from "react-icons/im";
 import { IoPlayOutline } from "react-icons/io5";
 import { BsShop   } from "react-icons/bs";
 import NavbarLeft from './NavbarLeft';
 import NavbarRight from './NavbarRight';
-export default function Header() {
+export default function Header({session}) {
   const [activeIcon, setActiveIcon] = useState('home');
 
   const icons = [
@@ -28,7 +29,7 @@ export default function Header() {
 
         {/* Center  */}
         <div className='flex  items-center justify-center md:min-w-20 lg:min-w-150  text-gray-500'>
-            <div className='hidden md:flex justify-between md:space-x-10  lg:space-x-20'>
+            <div className='hidden md:flex justify-between md:space-x-15  lg:space-x-30'>
               {icons.map(({ id, Icon }) => (
                 <div key={id} onClick={() => setActiveIcon(id)}>
                   <HeaderIcon Icon={Icon} active={activeIcon === id} />
@@ -37,12 +38,13 @@ export default function Header() {
 
               ))}
             </div>
+            
         </div>
 
 
         {/* Right */}
         <div className='flex items-center space-x-2 md:min-w-30  mr-3  lg:min-w-75 justify-end text-gray-800'>
-            <NavbarRight />
+            <NavbarRight session={session}/>
         </div>
 
     </div>

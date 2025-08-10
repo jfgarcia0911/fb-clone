@@ -11,7 +11,7 @@ export default function NavbarLeft() {
 
   return (
     <>
-        <Image src="https://links.papareact.com/5me" alt="Logo" width={30} height={30} layout='fixed' className={`${isOpen ? 'hidden' : 'block'}`}/>
+        <Image src="https://links.papareact.com/5me" alt="Logo" width={30} height={30}  className={`${isOpen ? 'hidden' : 'block'}`}/>
         <FaArrowLeft className={`cursor-pointer h-6 text-gray-600 ${isOpen? 'block' : 'hidden'} z-100`} onClick={()=> setIsOpen(!isOpen)} />
 
         <div className='flex absolute left-10 bg-gray-100 rounded-full p-2 ml-2 w-[220px]'>

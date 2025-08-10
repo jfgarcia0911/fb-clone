@@ -4,7 +4,7 @@ import React, {useState} from 'react'
 import Image from 'next/image'
 import { FaBell } from "react-icons/fa";
 import { BsMessenger, BsGrid3X3GapFill } from "react-icons/bs";
-export default function NavbarRight() {
+export default function NavbarRight({session}) {
 
     const [activeIcon, setActiveIcon] = useState('');
     const icons = [
@@ -26,7 +26,7 @@ export default function NavbarRight() {
             
             <Image
               className='h-9 w-9 rounded-full'
-              src="/profile-pic.png"
+              src={session?.user?.image || '/default-avatar.png'}
               alt="Profile Pic"
               width={30}
               height={30}

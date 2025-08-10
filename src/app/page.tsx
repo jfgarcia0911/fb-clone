@@ -1,15 +1,47 @@
+"use server";
+import Link from "next/link";
 import Header from "./components/header/Header";
+import Login from "./components/header/Login";
+import { auth } from "@/auth";
+import Image from "next/image";
+export default async function Home() { 
+	const session = await auth()
+	console.log(session) 
 
-export default function Home() {
+	
 	return (
 		<div className="">
 			{/* Header */}
-			<Header />
+			<Header session={session}/>
+
+
+			{session?.user ? (
+				<>
+					<div>Welcome {session.user.name}</div>
+					<Link href="/user-info"> User Info </Link>
+					<Image src={session?.user?.image || '/default-avatar.png'} width={30} height={30} alt={session.user.name ?? 'Avatar'}/>
+				</>
+			)
+			:( <div>User not signed in</div>)}
+			<Login/> 
 			<main>
 				{/* Sidebar */}
-				{/* Feed */}
+				{/* Feed */}  
 				{/* Widgets */}
 			</main>
 		</div>
 	);
 }
+
+
+// export async function getServerSideProps(context) {
+// 	//Get the user
+// 	const session = await getSession(context);
+// 	return {
+// 		props: {
+// 			session, // Will be passed to the page component as props
+// 		},
+// 	};
+// }
+
+
