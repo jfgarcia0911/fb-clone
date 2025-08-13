@@ -4,6 +4,9 @@ import React, {useState} from 'react'
 import Image from 'next/image'
 import { FaBell } from "react-icons/fa";
 import { BsMessenger, BsGrid3X3GapFill } from "react-icons/bs";
+import { logout } from '@/lib/auth';
+import Link from 'next/link';
+
 export default function NavbarRight({session}) {
 
     const [activeIcon, setActiveIcon] = useState('');
@@ -23,14 +26,21 @@ export default function NavbarRight({session}) {
         )
       })}
             
-            
+            {session?.user ? 
+            <>
             <Image
               className='h-9 w-9 rounded-full'
               src={session?.user?.image || '/default-avatar.png'}
               alt="Profile Pic"
               width={30}
               height={30}
-            />
+            /> 
+            <button onClick={logout}>Sign Out</button> 
+            </>
+            :
+            
+            <Link href={`/auth/signin`} >Sign In</Link> }
+            
     </>
   )
 }

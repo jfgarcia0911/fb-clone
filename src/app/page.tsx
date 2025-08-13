@@ -1,7 +1,6 @@
 "use server";
 import Link from "next/link";
 import Header from "./components/header/Header";
-import Login from "./components/header/Login";
 import { auth } from "@/auth";
 import Image from "next/image";
 export default async function Home() { 
@@ -23,7 +22,6 @@ export default async function Home() {
 				</>
 			)
 			:( <div>User not signed in</div>)}
-			<Login/> 
 			<main>
 				{/* Sidebar */}
 				{/* Feed */}  
