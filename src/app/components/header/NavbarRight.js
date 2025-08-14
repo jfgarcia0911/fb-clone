@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { MdLogout } from "react-icons/md";
 import { IoSettings } from "react-icons/io5";
 import { IoMdHelpCircle } from "react-icons/io";
+import { PiSignIn } from "react-icons/pi";
 
 
 export default  function NavbarRight({session}) {
@@ -55,9 +56,14 @@ console.log(session)
           className="rounded-full cursor-pointer transition duration-300 hover:brightness-95"
           />
           </div>
-          {session.user.name}
+          <div className='text-xl font-semibold capitalize'>
+            {session?.user.name}
+          </div>
         </div>
         <ul className="p-2 text-sm text-gray-700">
+          
+          {session?.user? 
+          <>
           <li className=" flex items-center px-4 py-2 rounded-lg hover:bg-gray-300 cursor-pointer">
             <div className='bg-gray-300 rounded-full p-1 mr-2'>
               <IoSettings className='h-6 w-6  mx-auto'/>
@@ -70,19 +76,21 @@ console.log(session)
             </div>
             <button >Help & support</button> 
           </li>
-          {session?.user? 
           <li className=" flex items-center px-4 py-2 rounded-lg hover:bg-gray-300 cursor-pointer">
             <div className='bg-gray-300 rounded-full p-1 mr-2'>
               <MdLogout className='h-6 w-6  mx-auto'/>
             </div>
             <button onClick={logout}>Sign Out</button> 
           </li>
+          </>
           :
-          <li className="px-4 py-2 rounded-lg hover:bg-gray-300 cursor-pointer">
+          <li className=" flex items-center px-4 py-2 rounded-lg hover:bg-gray-300 cursor-pointer">
+            <div className='bg-gray-300 rounded-full p-1 mr-2'>
+              <PiSignIn className='h-6 w-6  mx-auto'/>
+            </div>
             <Link href={`/auth/signin`} >Sign In</Link>
           </li>
           }
-          
         </ul>
       </div>
     </div>

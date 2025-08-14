@@ -13,7 +13,7 @@ export default function page() {
 					Sign in to connect with friends and share what&apos;s new.
 				</div>
 				<div className=" text-gray-500 mb-2">
-					<button onClick={login}  className="cursor-pointer flex items-center justify-center">
+					<button onClick={login}  className="cursor-pointer flex items-center text-blue-500 justify-center">
 						<FaFacebook className="h-6 w-6 mr-3 items-center" />
 						<div className="text-md font-medium ">
 							Login with Facebook
