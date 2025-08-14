@@ -1,17 +1,18 @@
-"use server";
+"use client";
+
 import Link from "next/link";
 import Header from "./components/header/Header";
-import { auth } from "@/auth";
 import Image from "next/image";
-export default async function Home() { 
-	const session = await auth()
-	console.log(session) 
+import { useSession } from "next-auth/react";
+export default  function Home() { 
+
+	const {data: session} = useSession()
 
 	
 	return (
 		<div className="">
 			{/* Header */}
-			<Header session={session}/>
+			<Header />
 
 
 			{session?.user ? (
@@ -32,14 +33,5 @@ export default async function Home() {
 }
 
 
-// export async function getServerSideProps(context) {
-// 	//Get the user
-// 	const session = await getSession(context);
-// 	return {
-// 		props: {
-// 			session, // Will be passed to the page component as props
-// 		},
-// 	};
-// }
 
 
