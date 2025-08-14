@@ -15,11 +15,11 @@ export default async function Home() {
 
 
 			{session?.user ? (
-				<>
+				<div className="">
 					<div>Welcome {session.user.name}</div>
 					<Link href="/user-info"> User Info </Link>
 					<Image src={session?.user?.image || '/default-avatar.png'} width={30} height={30} alt={session.user.name ?? 'Avatar'}/>
-				</>
+				</div>
 			)
 			:( <div>User not signed in</div>)}
 			<main>

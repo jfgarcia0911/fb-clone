@@ -40,6 +40,26 @@ export default function NavbarRight({session}) {
             :
             
             <Link href={`/auth/signin`} >Sign In</Link> }
+
+      <div className="relative inline-block group">
+      {/* Image */}
+      <Image
+        src="/profile.jpg"
+        alt="Profile"
+        width={50}
+        height={50}
+        className="rounded-full cursor-pointer"
+      />
+ 
+      {/* Dropdown menu */}
+      <div className="absolute right-0 mt-2 w-40 bg-gray-100 border border-gray-200 rounded-md shadow-lg opacity-0  group-hover:opacity-100 group-hover:visible transition-opacity duration-200">
+        <ul className="py-1 text-sm text-gray-700">
+          <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Profile</li>
+          <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Settings</li>
+          <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Logout</li>
+        </ul>
+      </div>
+    </div>
             
     </>
   )
