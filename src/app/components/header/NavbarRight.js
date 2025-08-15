@@ -68,27 +68,29 @@ console.log(session)
             <div className='bg-gray-300 rounded-full p-1 mr-2'>
               <IoSettings className='h-6 w-6  mx-auto'/>
             </div>
-            <button >Settings & privacy</button> 
+            <span >Settings & privacy</span> 
           </li>
           <li className=" flex items-center px-4 py-2 rounded-lg hover:bg-gray-300 cursor-pointer">
             <div className='bg-gray-300 rounded-full p-1 mr-2'>
               <IoMdHelpCircle className='h-6 w-6  mx-auto'/>
             </div>
-            <button >Help & support</button> 
+            <span >Help & support</span> 
           </li>
-          <li className=" flex items-center px-4 py-2 rounded-lg hover:bg-gray-300 cursor-pointer">
+          <li onClick={logout} className=" flex items-center px-4 py-2 rounded-lg hover:bg-gray-300 cursor-pointer group">
             <div className='bg-gray-300 rounded-full p-1 mr-2'>
               <MdLogout className='h-6 w-6  mx-auto'/>
             </div>
-            <button onClick={logout}>Sign Out</button> 
+            <span >Sign Out</span> 
           </li>
           </>
           :
           <li className=" flex items-center px-4 py-2 rounded-lg hover:bg-gray-300 cursor-pointer">
+            <Link className='flex items-center' href={`/auth/signin`}>
             <div className='bg-gray-300 rounded-full p-1 mr-2'>
               <PiSignIn className='h-6 w-6  mx-auto'/>
             </div>
-            <Link href={`/auth/signin`} >Sign In</Link>
+            <span  >Sign In</span>
+            </Link>
           </li>
           }
         </ul>

@@ -11,7 +11,7 @@ export default function NavbarLeft() {
 
   return (
     <> 
-        <Image src="https://links.papareact.com/5me" alt="Logo" width={30} height={30}  className={`${isOpen ? 'hidden' : 'block'}`}/>
+        <Image src="https://links.papareact.com/5me" alt="Logo" width={40} height={40}  className={`${isOpen ? 'hidden' : 'block'}`}/>
         <FaArrowLeft className={`cursor-pointer h-6 text-gray-600 ${isOpen? 'block' : 'hidden'} z-100`} onClick={()=> setIsOpen(!isOpen)} />
 
         <div className='z-1  flex absolute left-10 bg-gray-100 rounded-full p-2 ml-2 w-[220px]'>
@@ -24,7 +24,7 @@ export default function NavbarLeft() {
         </div>
 
         {/* Search Bar */}
-        <div className={`absolute bg-white  top-0 -left-3 w-[300px] pb-2    rounded-sm shadow-[4px_8px_12px_-6px_rgba(0,0,0,0.2)] transition duration-300 ${isOpen ? 'block' : 'hidden'}`} >
+        <div className={`absolute bg-white  top-0 -left-3 w-[300px] pb-2    rounded-sm shadow-[4px_8px_12px_-6px_rgba(0,0,0,0.2)] transition-all duration-300 ease-in-out ${isOpen ? 'block' : 'hidden'}`} >
             <div className='flex justify-between items-center py-2 mt-15 mx-3'>
               <h1 className='text-xl font-semibold'>Recent</h1>
               <h1 className='text-md text-blue-500 '>Edit</h1>
