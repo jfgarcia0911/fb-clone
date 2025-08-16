@@ -16,19 +16,20 @@ export default function Sidebar() {
   const {data: session} = useSession()
 console.log(session)
   return (
-    <div className='hidden md:inline-flex p-6    '>
-       <div className='mt-3'>
-        <div className='flex items-center mb-6'>
-          <Image
+    <div className=' p-6    '>
+       <div className='flex relative flex-col  mt-3'>        
+        <div className='flex  mb-6'>
+          <div className='flex items-center text-gray-900 h-7 w-7 mr-3'>
+            <Image
             src={session?.user?.image || '/default-avatar.png'}
             alt="Profile"
-            width={24}
-            height={24}
-            className="mr-2 rounded-full cursor-pointer transition duration-300 hover:brightness-95  "
-          />
-          <span className='capitalize sm:hidden lg:inline-flex'>{session?.user?.name}</span>
+            width={35}
+            height={35}
+             className='object-cover  mx-auto rounded-full'/>
+          </div>
+          <span className='capitalize lg:hidden xl:inline-flex text-md font-semibold'>{session?.user?.name}</span>
         </div>
-        <div className='flex items-center mb-6'>
+        <div className='flex items-center mb-7'>
           <SidebarIcon Icon={FaUserFriends} title='Friends'/>
         </div>
         <div className='flex items-center mb-6'>
@@ -46,8 +47,11 @@ console.log(session)
         <div className='flex items-center mb-6'>
           <SidebarIcon Icon={FaClock} title='Memories'/>
         </div>
-        <div className='flex items-center mb-6'>
-          <SidebarIcon Icon={FaChevronDown} title='See more'/>
+        <div className='flex  mb-6'>
+          <div className='flex items-center text-gray-900 h-7 w-7 mr-3'>
+            <FaChevronDown className='h-4 w-4 mx-auto'/>
+          </div>
+          <span className='lg:hidden xl:inline-flex text-md font-semibold'>See more</span>
         </div>
        </div>
     </div>

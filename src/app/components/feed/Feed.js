@@ -4,7 +4,7 @@ import Posts from './Posts'
 import CreatePost from './CreatePost'
 export default function Feed() {
   return (
-    <div className=' bg-gray-600 w-170 '>
+    <div className='w-170 '>
       {/* Create Post */}
       <div>
         <CreatePost/>

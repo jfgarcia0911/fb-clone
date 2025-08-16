@@ -4,9 +4,9 @@ export default function SidebarIcon({Icon, title}) {
   return (
     <>
     <div className='text-blue-500'>
-      <Icon className='h-6 w-6 mr-2'/>
+      <Icon className='h-7 w-7 mr-3'/>
     </div>
-    <span className=' sm:hidden lg:inline-flex'>{title}</span>
+    <span className=' lg:hidden xl:inline-flex text-md font-semibold'>{title}</span>
     </>
   )
 }

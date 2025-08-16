@@ -53,14 +53,16 @@ export default  function NavbarRight({session}) {
            
 
       <div onClick={() => setIsOpen(!isOpen)} className="relative inline-block group     " ref={dropdownRef}>
-      {/* Image */}
+        <div className='relative h-10 w-10'>
+          {/* Image */}
         <Image
           src={session?.user?.image || '/default-avatar.png'}
           alt="Profile"
           width={40}
           height={40}
-          className=" h-8 w-8 rounded-full cursor-pointer transition duration-300 hover:brightness-95"
+          className=" rounded-full cursor-pointer transition duration-300 hover:brightness-95"
         />
+        </div>
  
       {/* Dropdown menu */}
       <div  className={`${isOpen? 'block' : 'hidden'} absolute right-0 p-2 mt-2 w-60 bg-gray-50 border border-gray-200 rounded-md shadow-lg transition-opacity duration-200`}>

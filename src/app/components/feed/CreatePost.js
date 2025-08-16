@@ -14,7 +14,7 @@ export default function CreatePost() {
   const {data: session} = useSession()
   return (
     <div>
-      <div className='bg-blue-300 border-b my-3 py-3 text-gray-700'>
+      <div className=' border-b border-gray-100 rounded-xl my-3 py-3 text-gray-700'>
         <div className=' flex items-center ml-3 mb-3 '>
           <div className='mr-3'>
             <Image
@@ -22,10 +22,10 @@ export default function CreatePost() {
               alt="Profile"
               width={50}
               height={50}
-              className=" h-10 w-10 rounded-full cursor-pointer transition duration-300 hover:brightness-95"
+              className="  rounded-full cursor-pointer transition duration-300 hover:brightness-95"
             />
           </div>
-          <input type='text' placeholder={`What's on your mind, ${session?.user.name || 'friend'}?`} className='text-lg w-full outline-none focus:outline-none bg-gray-300 rounded-lg pl-2 mr-4'/>
+          <input type='text' placeholder={`What's on your mind, ${session?.user.name || 'friend'}?`} className='text-lg w-full outline-none focus:outline-none  rounded-lg pl-2 mr-4'/>
           
         </div>
         <div className='flex items-center justify-evenly '>
