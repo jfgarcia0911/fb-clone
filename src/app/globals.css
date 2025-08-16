@@ -3,3 +3,9 @@
 
 /* Gray Shadow shadow-[0_10px_12px_rgba(0,0,0,0.2)] */
  /* hidden lg:inline-flex  "show and hide div  */
+
+
+ /* Custom class to hide scrollbar */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}

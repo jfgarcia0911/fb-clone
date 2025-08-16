@@ -1,15 +1,21 @@
 import React from 'react'
 import Stories from './Stories'
-
+import Posts from './Posts'
+import CreatePost from './CreatePost'
 export default function Feed() {
   return (
     <div className=' bg-gray-600 w-170 '>
-      <div>Create Post</div>
+      {/* Create Post */}
+      <div>
+        <CreatePost/>
+      </div>
       {/* Stories */}
-      <div className='  overflow-hidden'>
+      <div className='  '>
         <Stories/>
       </div>
-      <div>Post</div>
+      <div>
+        <Posts/>
+      </div>
     </div>
   )
 }
