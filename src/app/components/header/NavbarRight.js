@@ -1,6 +1,6 @@
 "use client";
 
-import React, {useState} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import Image from 'next/image'
 import { FaBell } from "react-icons/fa";
 import { BsMessenger, BsGrid3X3GapFill } from "react-icons/bs";
@@ -13,7 +13,10 @@ import { PiSignIn } from "react-icons/pi";
 
 
 export default  function NavbarRight({session}) {
-console.log(session)
+  const dropdownRef = useRef(null);
+
+  
+  
   const [isOpen, setIsOpen ] = useState(false)
   const [activeIcon, setActiveIcon] = useState('');
   const icons = [
@@ -21,6 +24,21 @@ console.log(session)
       {id: 'messenger', Icon: BsMessenger },
       {id: 'bell', Icon: FaBell }
     ]
+
+    // Close the dropdown when clicking outside of it
+    useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [setIsOpen]);
+  
   return (
     <>
       {/* Profile Pic  */}
@@ -30,22 +48,22 @@ console.log(session)
             <Icon className='h-6 w-6 ' />
           </div>
         )
-      })}
+    })}
             
            
 
-      <div onClick={() => setIsOpen(!isOpen)} className="relative inline-block group    ">
+      <div onClick={() => setIsOpen(!isOpen)} className="relative inline-block group     " ref={dropdownRef}>
       {/* Image */}
         <Image
           src={session?.user?.image || '/default-avatar.png'}
           alt="Profile"
           width={40}
           height={40}
-          className="rounded-full cursor-pointer transition duration-300 hover:brightness-95"
+          className=" h-8 w-8 rounded-full cursor-pointer transition duration-300 hover:brightness-95"
         />
  
       {/* Dropdown menu */}
-      <div className={`${isOpen? 'block' : 'hidden'} absolute right-0 p-2 mt-2 w-60 bg-gray-50 border border-gray-200 rounded-md shadow-lg transition-opacity duration-200`}>
+      <div  className={`${isOpen? 'block' : 'hidden'} absolute right-0 p-2 mt-2 w-60 bg-gray-50 border border-gray-200 rounded-md shadow-lg transition-opacity duration-200`}>
         <div className='flex items-center p-2 mt-1 border-b border-gray-300 '>
           <div className='mr-2'>
             <Image

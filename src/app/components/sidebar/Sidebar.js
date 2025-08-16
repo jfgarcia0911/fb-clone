@@ -16,8 +16,7 @@ export default function Sidebar() {
   const {data: session} = useSession()
 console.log(session)
   return (
-    <div className='hidden md:inline-flex p-6 bg-gray-300  w-[300px] '>
-       
+    <div className='hidden md:inline-flex p-6    '>
        <div className='mt-3'>
         <div className='flex items-center mb-6'>
           <Image
@@ -25,9 +24,9 @@ console.log(session)
             alt="Profile"
             width={24}
             height={24}
-            className="mr-2 rounded-full cursor-pointer transition duration-300 hover:brightness-95 "
+            className="mr-2 rounded-full cursor-pointer transition duration-300 hover:brightness-95  "
           />
-          <span className='capitalize'>{session?.user?.name}</span>
+          <span className='capitalize sm:hidden lg:inline-flex'>{session?.user?.name}</span>
         </div>
         <div className='flex items-center mb-6'>
           <SidebarIcon Icon={FaUserFriends} title='Friends'/>

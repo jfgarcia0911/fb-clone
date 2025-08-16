@@ -8,13 +8,13 @@
     "start": "next start",
     "lint": "next lint"
   },
-  
   "dependencies": {
     "@auth/core": "^0.34.2",
     "@auth/prisma-adapter": "^2.10.0",
     "@heroicons/react": "^2.2.0",
     "@prisma/client": "^6.13.0",
     "@prisma/extension-accelerate": "^2.0.2",
+    "@tailwindcss/typography": "^0.5.16",
     "date-fns": "^4.1.0",
     "next": "15.4.5",
     "next-auth": "^5.0.0-beta.29",
