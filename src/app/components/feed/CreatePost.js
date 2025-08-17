@@ -1,33 +1,51 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { ImFileVideo } from "react-icons/im";
 import { MdPhotoLibrary } from "react-icons/md";
 import { TfiVideoClapper } from "react-icons/tfi";
 import CreatPostIcon from "./CreatePostIcon";
-import firebase from "firebase/compat/app"; 
-import {db} from '../../../firebase.js'
+import firebase from "firebase/compat/app";
+import { db } from "../../../firebase.js";
 
 export default function CreatePost() {
 	const { data: session } = useSession();
-	const inputRef = useRef();
+	const inputRef = useRef(null);
+	const filePickerRef = useRef(null);
+	const [imageToPost, setImageToPost] = useState();
 
 	const sendPost = (e) => {
 		e.preventDefault();
 
-    if(!inputRef.current.value) return;
+		if (!inputRef.current.value) return;
 
-    db.collection('posts').add({
-      message: inputRef.current.value,
-      name: session.user.name,
-      email: session.user.email,
-      image: session.user.image,
-      timestamp: firebase.firestore.FieldValue.serverTimestamp()
-    })
+		db.collection("posts").add({
+			message: inputRef.current.value,
+			name: session.user.name,
+			email: session.user.email,
+			image: session.user.image,
+			timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+		});
 
-    inputRef.current.value = ''
+		inputRef.current.value = "";
+	};
+
+	const addImageToPost = (e) => {
+		const reader = new FileReader();
+		if (e.target.files[0]) {
+			reader.readAsDataURL(e.target.files[0]);
+		}
+
+		reader.onload = (readerEvent) => {
+			setImageToPost(readerEvent.target.result);
+		};
+	};
+
+	const removeImage = () => {
+		setImageToPost(null);
+		filePickerRef.current.value = null;
 	};
 
 	return (
@@ -45,7 +63,7 @@ export default function CreatePost() {
 					</div>
 					<form className="flex  w-full">
 						<input
-            ref={inputRef}
+							ref={inputRef}
 							type="text"
 							placeholder={` What's on your mind, ${
 								session?.user.name || "friend"
@@ -56,6 +74,18 @@ export default function CreatePost() {
 							Submit
 						</button>
 					</form>
+
+					{imageToPost && (
+						<div onClick={removeImage}>
+							<Image
+								className="h-10 object-contain"
+								width={40} // Add appropriate width
+								height={40}
+								alt="pic"
+								src={imageToPost}
+							/>
+						</div>
+					)}
 				</div>
 				<div className="flex relative items-center justify-between my-2  mx-4 ">
 					<div className="text-red-600 w-full ">
@@ -64,10 +94,19 @@ export default function CreatePost() {
 							title={"Live video"}
 						/>
 					</div>
-					<div className="text-green-600 w-full">
+					<div
+						onClick={() => filePickerRef.current.click()}
+						className="text-green-600 w-full "
+					>
 						<CreatPostIcon
 							Icon={MdPhotoLibrary}
 							title={"Photo/video"}
+						/>
+						<input
+							type="file"
+							ref={filePickerRef}
+							onChange={addImageToPost}
+							hidden
 						/>
 					</div>
 					<div className="text-red-400 w-full">
