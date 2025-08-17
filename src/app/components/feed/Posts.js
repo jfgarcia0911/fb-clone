@@ -8,9 +8,9 @@ import { FaRegShareFromSquare } from "react-icons/fa6";
 
 export default function Posts() {
   return (
-    <div className='mt-10  relative'>
+    <div className='mt-10   relative'>
       {/* Upper Part */}
-      <div className='flex relative justify-between mx-3'>
+      <div className='flex relative justify-between p-3'>
         <div className='flex items-center '>
           <div className=' border-2 rounded-full border-blue-500 mr-3'>
           <Image src={'https://links.papareact.com/zof'} 
@@ -33,7 +33,7 @@ export default function Posts() {
         </div>
       </div>
       {/* Middle Part */}
-      <div className='relative h-140 w-full mt-3'>
+      <div className='relative h-140 w-full '>
         <Image src={'https://links.papareact.com/k2j'} 
           alt="Profile"
           fill
@@ -42,16 +42,16 @@ export default function Posts() {
         />
       </div>
       {/* Bottom Part */}
-      <div className='border border-x-0  border-gray-400 my-5 py-3'>
-        <div className='flex items-center justify-evenly text-gray-500'>
-          <div className='flex text-lg'>
+      <div className='border-t  border-gray-400 my-5 mx-3 py-2'>
+        <div className='flex items-center justify-evenly relative text-gray-500'>
+          <div className='flex text-lg hover:bg-gray-100 w-full py-2 rounded-xl justify-center'>
             <SlLike className='h-6 w-6 mr-2'/>
             <p> Like</p>
           </div>
-          <div className='flex text-lg'>
+          <div className='flex text-lg hover:bg-gray-100 w-full py-2 rounded-xl justify-center'>
             <FaRegCommentAlt className='h-6 w-6 mr-2'/>
             <p> Comment</p>
-          </div><div className='flex text-lg'>
+          </div><div className='flex text-lg hover:bg-gray-100 w-full py-2 rounded-xl justify-center'>
             <FaRegShareFromSquare className='h-6 w-6 mr-2'/>
             <p> Share</p>
           </div>

@@ -14,7 +14,7 @@ export default  function Home() {
 			<Header />
 
 			<main>
-				<div className="grid grid-cols-5">
+				<div className="grid bg-gray-100 grid-cols-5">
 					{/* Sidebar */}
 					<div className=" hidden lg:flex ">
 						<Sidebar/>	
@@ -24,7 +24,7 @@ export default  function Home() {
 						<Feed/>	
 					</div>
 					{/* RightSidebar */}
-					<div className="bg-blue-300 hidden xl:flex col-span-1">
+					<div className=" hidden xl:flex col-span-1">
 						<RightsideBar/>
 					</div> 
 				</div>

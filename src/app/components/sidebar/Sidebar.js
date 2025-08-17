@@ -19,12 +19,12 @@ console.log(session)
     <div className=' p-6    '>
        <div className='flex relative flex-col  mt-3'>        
         <div className='flex  mb-6 cursor-pointer group'>
-          <div className='flex items-center text-gray-900 h-8 w-8 mr-3 p-1 rounded-full group-hover:bg-gray-300'>
+          <div className='flex relative items-center text-gray-900 h-8 w-8 mr-3 p-1 rounded-full group-hover:bg-gray-300'>
             <Image
             src={session?.user?.image || '/default-avatar.png'}
             alt="Profile"
-            width={35}
-            height={35}
+            fill
+            sizes="32px"
              className='object-cover  mx-auto rounded-full'/>
           </div>
           <span className='capitalize lg:hidden xl:inline-flex text-md font-semibold'>{session?.user?.name}</span>

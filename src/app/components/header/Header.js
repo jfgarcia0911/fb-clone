@@ -23,30 +23,9 @@ export default function Header() {
   ];
 
   return (
-    // <div className=' flex items-center justify-between py-2 w-full shadow-md '>
-    //     {/* Left */}
-    //     <div className='relative flex items-center md:min-w-30 lg:min-w-75 ml-3'>
-    //         <NavbarLeft />
-    //     </div>
+    
 
-    //     {/* Center  */}
-    //     <div className='flex  items-center justify-center md:min-w-20 lg:min-w-150  text-gray-500'>
-    //         <div className='hidden md:flex justify-between md:space-x-15  lg:space-x-30'>
-    //           {icons.map(({ id, Icon }) => (
-    //             <div key={id} onClick={() => setActiveIcon(id)}>
-    //               <HeaderIcon Icon={Icon} active={activeIcon === id} />
-    //             </div>
-    //           ))}
-    //         </div>            
-    //     </div>
-
-    //     {/* Right */}
-    //     <div className='flex items-center space-x-2 md:min-w-30  mr-3  lg:min-w-75 justify-end text-gray-800'>
-    //         <NavbarRight session={session}/>
-    //     </div>
-    // </div>
-
-    <div className=' grid grid-cols-2 md:grid-cols-5 items-center justify-between py-2  shadow-md '>
+    <div className=' grid grid-cols-2 md:grid-cols-5 items-center bg-white justify-between py-2 border-b border-gray-200 shadow-2xl shadow-black/30 '>
         {/* Left */}
         <div className='col-span-1 relative flex items-center  ml-3 '>
             <NavbarLeft />

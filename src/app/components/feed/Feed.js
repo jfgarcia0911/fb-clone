@@ -6,14 +6,14 @@ export default function Feed() {
   return (
     <div className='w-170 '>
       {/* Create Post */}
-      <div>
+      <div className='bg-white rounded-2xl'>
         <CreatePost/>
       </div>
       {/* Stories */}
       <div className='  '>
         <Stories/>
       </div>
-      <div>
+      <div className='bg-white rounded-2xl shadow-lg'>
         <Posts/>
       </div>
     </div>
