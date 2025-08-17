@@ -25,7 +25,7 @@ export default function Header() {
   return (
     
 
-    <div className=' grid grid-cols-2 md:grid-cols-5 items-center bg-white justify-between py-2 border-b border-gray-200 shadow-2xl shadow-black/30 '>
+    <div className='sticky top-0 z-50  grid grid-cols-2 md:grid-cols-5 items-center bg-white justify-between py-2 border-b border-gray-200 shadow-sm  '>
         {/* Left */}
         <div className='col-span-1 relative flex items-center  ml-3 '>
             <NavbarLeft />

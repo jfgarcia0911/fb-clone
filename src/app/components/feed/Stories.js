@@ -64,10 +64,10 @@ export default function Stories() {
 
 
         </div>
-        <button  className='absolute z-50 top-22 left-3 bg-white rounded-full p-3 cursor-pointer'>
+        <button  className='absolute z-40 top-22 left-3 bg-white rounded-full p-3 cursor-pointer'>
             <FaChevronLeft className='h-6 w-6 text-gray-500 '/>
         </button>
-        <button  className='absolute z-50 top-22 right-3 bg-white rounded-full p-3 cursor-pointer'>
+        <button  className='absolute z-40 top-22 right-3 bg-white rounded-full p-3 cursor-pointer'>
             <FaChevronRight className='h-6 w-6 text-gray-500 '/>
         </button>
     </div>
