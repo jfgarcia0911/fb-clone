@@ -2,6 +2,7 @@ import React from 'react'
 import Stories from './Stories'
 import Posts from './Posts'
 import CreatePost from './CreatePost'
+
 export default function Feed() {
   return (
     <div className='w-170 '>

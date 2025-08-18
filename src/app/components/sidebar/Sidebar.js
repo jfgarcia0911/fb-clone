@@ -14,7 +14,6 @@ import { FaChevronDown } from "react-icons/fa";
 export default function Sidebar() {
 
   const {data: session} = useSession()
-console.log(session)
   return (
     <div className=' p-6    '>
        <div className='flex relative flex-col  mt-3'>        
