@@ -3,7 +3,6 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { FaArrowLeft } from "react-icons/fa";
-import { GoClock } from "react-icons/go";
 import { IoClose } from "react-icons/io5";
 import { useSession } from "next-auth/react";
 export default function NavbarLeft() {

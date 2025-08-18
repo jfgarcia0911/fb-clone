@@ -8,7 +8,7 @@ import { FaRegShareFromSquare } from "react-icons/fa6";
 
 export default function Posts() {
   return (
-    <div className='mt-10   relative'>
+    <div className='   relative'>
       {/* Upper Part */}
       <div className='flex relative justify-between p-3'>
         <div className='flex items-center '>
