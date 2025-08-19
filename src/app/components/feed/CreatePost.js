@@ -148,6 +148,7 @@ export default function CreatePost({ onSendImage }) {
 	const [imageToPost, setImageToPost] = useState();
 	const [open, setOpen] = useState(false);
 	const [file, setFile] = useState({})
+	const [imgUrl, setImageUrl] =useState("")
 	const [isUploading, setIsUpoading] = useState(false)
 	// const [imageUrls, setImageUrls] = useState([]);
 
@@ -160,9 +161,10 @@ export default function CreatePost({ onSendImage }) {
 	const handleConfirm = async (e) => {
 		setIsUpoading(true)
 		e?.preventDefault(); // Safe even if not from form event
-		await sendPost(e);
 		await addImageToPost(e);
+		await sendPost(e);
 	};
+
 	const sendPost = (e) => {
 		console.log(inputRef.current.value);
 		e.preventDefault();
@@ -174,14 +176,15 @@ export default function CreatePost({ onSendImage }) {
 			name: session.user.name,
 			email: session.user.email,
 			image: session.user.image,
+			imgUrl: imgUrl,
 			timestamp: firebase.firestore.FieldValue.serverTimestamp(),
 		});
 
 		inputRef.current.value = "";
 	};
-	console.log(open);
 
 	const handleImage = (e) => {
+		// Image Reader
 		const reader = new FileReader();
 		if (e.target.files[0]) {
 			reader.readAsDataURL(e.target.files[0]);
@@ -205,12 +208,13 @@ export default function CreatePost({ onSendImage }) {
 		});
 
 		const signedUrl = await response.json();
-		// onSendImage(signedUrl);
+		setImageUrl(signedUrl);
 
 		setIsUpoading(false)
 		// setOpen(true);
 		removeImage()
 	};
+	console.log(imgUrl)
 
 	const removeImage = () => {
 		setImageToPost(null);
@@ -255,8 +259,9 @@ export default function CreatePost({ onSendImage }) {
 					</div>
 
 					<div
-						onClick={() => filePickerRef.current?.click()}
-						className="text-green-600 w-full "
+					onClick={() => setOpen(true)}
+						// onClick={() => filePickerRef.current?.click()}
+						className="text-green-600 w-full cursor-pointer"
 					>
 						<CreatPostIcon
 							Icon={MdPhotoLibrary}
