@@ -7,7 +7,8 @@ import { SlLike } from "react-icons/sl";
 import { FaRegCommentAlt } from "react-icons/fa";
 import { FaRegShareFromSquare } from "react-icons/fa6";
 import { db } from "@/firebase";
-import { format } from "date-fns";
+import Link from "next/link";
+
 export default function Posts() {
 	// const [isVisible, setIsVisible] = useState(true)
 
@@ -78,7 +79,8 @@ export default function Posts() {
 						<p className="p-3 pt-0">{post.data().message}</p>
 					</div>
 					{/* Middle Part */}
-					<div className="relative h-140 w-full ">
+					<Link href={`./post/${post.id}`}>
+					<div className="relative h-140 w-full cursor-pointer">
 						<Image
 							src={post.data().imgUrl || "/fallback-image.jpg"}
 							alt="Profile"
@@ -88,6 +90,8 @@ export default function Posts() {
 							className=" object-cover"
 						/>
 					</div>
+					</Link>
+
 					{/* Bottom Part */}
 					<div className="border-y  border-gray-400 my-5 mx-3 py-2">
 						<div className="flex items-center justify-evenly relative text-gray-500">
