@@ -20,6 +20,14 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'avatars.githubusercontent.com',
       },
+      {
+  protocol: 'https',
+  hostname: '**.mypinata.cloud',
+},
+      {
+        protocol: 'https',
+        hostname: 'amber-decisive-alligator-189.mypinata.cloud',
+      },
     ],
   },
 };
