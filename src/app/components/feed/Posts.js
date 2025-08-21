@@ -87,7 +87,7 @@ export default function Posts() {
 							fill
 							loading="lazy"
 							sizes="(max-width: 768px) 100vw, 33vw"
-							className=" object-cover"
+							className=" object-contain bg-gray-100"
 						/>
 					</div>
 					</Link>

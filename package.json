@@ -17,6 +17,7 @@
     "@tailwindcss/typography": "^0.5.16",
     "date-fns": "^4.1.0",
     "firebase": "^12.1.0",
+    "firebase-admin": "^13.4.0",
     "next": "15.4.5",
     "next-auth": "^5.0.0-beta.29",
     "pinata": "^2.4.9",

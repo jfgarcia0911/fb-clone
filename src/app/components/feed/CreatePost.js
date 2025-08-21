@@ -13,7 +13,7 @@ import firebase from "firebase/compat/app";
 import { db } from "../../../firebase.js";
 import { IoClose } from "react-icons/io5";
 
-import Modal from "../../modal/Modal";
+import Modal from "../../ui/Modal";
 
 export default function CreatePost() {
 	const { data: session } = useSession();
@@ -33,7 +33,7 @@ export default function CreatePost() {
 		await sendPost(e);
 	};
 
-	const sendPost = (imgUrl1) => {
+	const sendPost = (imgUrl) => {
 		
 
 		if (!inputRef.current.value) return;
@@ -43,7 +43,7 @@ export default function CreatePost() {
 			name: session.user.name,
 			email: session.user.email,
 			image: session.user.image,
-			imgUrl: imgUrl1,
+			imgUrl: imgUrl,
 			timestamp: firebase.firestore.FieldValue.serverTimestamp(),
 		});
 
@@ -75,7 +75,7 @@ export default function CreatePost() {
 
 		const signedUrl = await response.json();
 		sendPost(signedUrl);
-		console.log(signedUrl)
+
 		setIsUpoading(false);
 		setOpen(false);
 		removeImage();
@@ -194,7 +194,7 @@ export default function CreatePost() {
 								placeholder={` What's on your mind, ${
 									session?.user.name || "friend"
 								}?`}
-								className="bg-gray-100 p-2 text-lg w-full outline-none focus:outline-none  text-wrap line-clamp-2 rounded-3xl text-md  "
+								className="h-15 p-2 text-lg w-full outline-none focus:outline-none  text-wrap line-clamp-2 rounded-3xl text-md  "
 							/>
 						</form>
 					</div>

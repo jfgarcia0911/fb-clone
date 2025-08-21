@@ -1,14 +1,13 @@
 "use client"
 import React, {use, useState} from 'react'
-import Stories from './Stories'
+import CreateStory from './CreateStory'
 import Posts from './Posts'
 import CreatePost from './CreatePost'
-
 export default function Feed() {
 
    
   return (
-    <div className='w-170 '>
+    <div className='w-170'>
 
       {/* Create Post */}
       <div className='bg-white rounded-2xl'>
@@ -17,7 +16,7 @@ export default function Feed() {
 
       {/* Stories */}
       <div className=' my-4 '>
-        <Stories/>
+        <CreateStory/>
       </div>
 
       {/* Posts */}

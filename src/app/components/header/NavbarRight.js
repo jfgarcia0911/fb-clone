@@ -32,7 +32,6 @@ export default function NavbarRight({ session }) {
 				setIsOpen(false);
 			}
 		}
-
 		document.addEventListener("mousedown", handleClickOutside);
 		return () => {
 			document.removeEventListener("mousedown", handleClickOutside);

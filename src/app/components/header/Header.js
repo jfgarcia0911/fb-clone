@@ -33,7 +33,7 @@ export default function Header() {
 
         {/* Center  */}
         <div className='col-span-2 order-3 md:order-none md:col-span-3 flex  items-center justify-center   text-gray-500'>
-            <div className='flex justify-evenly md:justify-between px-4 w-full md:w-100 lg:w-150'>
+            <div className='flex justify-evenly  md:justify-between px-4 w-full md:w-100 lg:w-150'>
               {icons.map(({ id, Icon }) => (
                 <div key={id} onClick={() => setActiveIcon(id)}>
                   <HeaderIcon Icon={Icon} active={activeIcon === id} />

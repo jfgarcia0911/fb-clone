@@ -9,3 +9,19 @@
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+
+@keyframes shimmer {
+          0% { transform: translateX(-100%) skewX(-12deg); }
+          100% { transform: translateX(200%) skewX(-12deg); }
+        }
+        @keyframes progress {
+          0% { width: 0%; }
+          100% { width: 100%; }
+        }
+        .animate-shimmer {
+          animation: shimmer 1.5s infinite;
+        }
+        .animate-progress {
+          animation: progress 3s ease-in-out;
+        }
