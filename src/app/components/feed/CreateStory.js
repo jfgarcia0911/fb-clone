@@ -8,7 +8,7 @@ import { BsPlusLg } from "react-icons/bs";
 import { useCollection } from "react-firebase-hooks/firestore";
 
 export default function CreateStory() {
-	const { data: session } = useSession();
+	const { data: session, status } = useSession();
 	const createStoryRef = useRef();
 	const [isPosting, setIsPosting] = useState(false);
 	const storiesContainerRef = useRef(null);
@@ -69,6 +69,9 @@ export default function CreateStory() {
 		}
 
 	};
+	if (status === "loading") {
+		return <div className="h-56 w-32 flex-shrink-0">Loading...</div>;
+	}
 
 	return (
 		<div className="relative flex items-center">
@@ -93,7 +96,7 @@ export default function CreateStory() {
 					<div className="relative h-56 w-32 flex-shrink-0 overflow-hidden rounded-t-2xl">
 						<div className="relative h-42 w-full">
 							<Image
-								src={session.user.image}
+								src={session?.user?.image || "/fallback-image.jpg"}
 								fill
 								alt="Your story"
 								sizes="(max-width: 768px) 100vw, 33vw"
@@ -138,7 +141,7 @@ export default function CreateStory() {
 						className="relative h-56 w-32 flex-shrink-0 overflow-hidden cursor-pointer rounded-2xl"
 					>
 						<Image
-							src={story.data().imgUrl}
+							src={story.data().imgUrl || "/fallback-image.jpg"}
 							fill
 							alt="story image"
 							sizes="(max-width: 768px) 100vw, 33vw"

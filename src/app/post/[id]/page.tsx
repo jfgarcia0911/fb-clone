@@ -3,11 +3,7 @@ import { db } from "@/firebase";
 import Image from "next/image";
 import { RiCloseLine } from "react-icons/ri";
 import Link from "next/link";
-export default async function page({
-	params,
-}: {
-	params: Promise<{ id: string }>;
-}) {
+export default async function page({params,}: {	params: Promise<{ id: string }>;}) {
 	const postId = (await params).id;
 
 	const docRef = db.collection("posts").doc(postId);

@@ -20,51 +20,51 @@ export default function Contacts() {
 			<div className="flex group cursor-pointer ml-3 mb-4 items-center">
 				<div className="relative mr-4 h-9 w-9 ">
 					<Image
-						src="https://links.papareact.com/xql"
+						src="/james.png"
 						fill
 						alt="profile pic"
 						sizes="32px"
 						className="object-cover rounded-full"
 					/>
 				</div>
-				<div>Name</div>
+				<div>James Harden</div>
 			</div>
 
 			<div className="flex group cursor-pointer ml-3 mb-4 items-center">
 				<div className="relative mr-4 h-9 w-9 ">
 					<Image
-						src="https://links.papareact.com/xql"
+						src="/kobe.png"
 						fill
 						alt="profile pic"
 						sizes="32px"
 						className="object-cover rounded-full"
 					/>
 				</div>
-				<div>Name</div>
+				<div>Kobe Bryant</div>
 			</div>
 			<div className="flex group cursor-pointer ml-3 mb-4 items-center">
 				<div className="relative mr-4 h-9 w-9 ">
 					<Image
-						src="https://links.papareact.com/xql"
+						src="/dirk.png"
 						fill
 						alt="profile pic"
 						sizes="32px"
 						className="object-cover rounded-full"
 					/>
 				</div>
-				<div>Name</div>
+				<div>Dirk Nowitski</div>
 			</div>
 			<div className="flex group cursor-pointer ml-3 mb-4 items-center">
 				<div className="relative mr-4 h-9 w-9 ">
 					<Image
-						src="https://links.papareact.com/xql"
+						src="/curry.png"
 						fill
 						alt="profile pic"
 						sizes="32px"
 						className="object-cover rounded-full"
 					/>
 				</div>
-				<div>Name</div>
+				<div>Stephen Curry</div>
 			</div>
 		</div>
 	);
